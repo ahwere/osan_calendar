@@ -1,0 +1,85 @@
+@font-face {
+  font-family: 'Noto Sans KR';
+  src: url('../fonts/NotoSansKR-Regular.ttf') format('truetype')
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+body {
+	font-family: 'Noto Sans KR', sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background: url("https://www.lotte.co.kr/common/w/images/business/comp/L414_01.jpg?v=3") no-repeat center;
+	background-size: cover;
+}
+body::before {
+	content: "";
+	position: absolute; z-index: 1;
+	top: 0; right: 0; bottom: 0; left: 0;
+	background-color: rgba(0, 0, 0, .7);
+}
+
+.login-form {position: relative; z-index: 2;}
+.login-form h1 {
+	font-size: 32px; color: #fff;
+	text-align: center;
+	margin-bottom: 60px;
+}
+.login-form .int-area {
+	width: 400px; position: relative;
+	margin-top: 20px;
+}
+.login-form .int-area:first-child {margin-top: 0;}
+.login-form .int-area input {
+	width: 100%;
+	padding: 20px 10px 10px;
+	background-color: transparent;
+	border: none;
+	border-bottom: 1px solid #999;
+	font-size: 18px; color: #fff;
+	outline: none;
+}
+.login-form .int-area label {
+	position: absolute; left: 10px; top: 15px;
+	font-size: 18px; color: #999;
+	transition: all .5s ease;
+}
+.login-form .int-area label.warning {
+	color: red !important;
+	animation: warning .3s ease;
+	animation-iteration-count: 3;
+}
+@keyframes warning {
+	0% {transform: translateX(-8px);}
+	25% {transform: translateX(8px);}
+	50% {transform: translateX(-8px);}
+	75% {transform: translateX(8px);}
+}
+.login-form .int-area input:focus + label,
+.login-form .int-area input:valid + label {
+	top: -2px;
+	font-size: 13px; color: #166cea;
+}
+
+.login-form .btn-area {margin-top: 30px;}
+.login-form .btn-area button {
+	width: 100%; height: 50px;
+	background: #166cea;
+	color: #fff;
+	font-size: 20px;
+	border: none;
+	border-radius: 25px;
+	cursor: pointer;
+}
+
+.login-form .caption {
+	margin-top: 20px;
+	text-align: center;
+}
+.login-form .caption a {
+    font-size: 15px; color: #999;
+    text-decoration: none;
+}
